@@ -3,6 +3,7 @@
 	import { slugify } from '$lib/utils';
 	import { resolve } from '$app/paths';
 	import type { DefinedTermSet, WithContext } from 'schema-dts';
+	import SvelteSeo from 'svelte-seo';
 
 	let schema = $derived<WithContext<DefinedTermSet>>({
 		'@context': 'https://schema.org',
@@ -19,6 +20,12 @@
 		{JSON.stringify(schema)}
 	</svelte:element>
 </svelte:head>
+
+<SvelteSeo
+	title="HIOrg Abkürzungsverzeichnis"
+	description="Verzeichnis von Abkürzungen im Katastrophenschutz, THW, Feuerwehr und Sanitätsdiensten."
+	canonical="https://hiorg-abkuerzungen.de/"
+/>
 
 <h1 class="h1 mb-4">Abbreviations</h1>
 

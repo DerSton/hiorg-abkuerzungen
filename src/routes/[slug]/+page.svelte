@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { DefinedTerm, WithContext } from 'schema-dts';
+	import SvelteSeo from 'svelte-seo';
+	import { slugify } from '$lib/utils';
 
 	let { data } = $props();
 	let entry = $derived(data.entry);
@@ -20,6 +22,12 @@
 		{JSON.stringify(schema)}
 	</svelte:element>
 </svelte:head>
+
+<SvelteSeo
+	title={`${entry.abbreviation} - Bedeutung | HIOrg Abkürzungsverzeichnis`}
+	description={`Was bedeutet ${entry.abbreviation}? Hier findest du die Bedeutung: ${entry.meaning}.`}
+	canonical={`https://hiorg-abkuerzungen.de/${slugify(`${entry.abbreviation} ${entry.meaning}`)}`}
+/>
 
 <h1 class="h1 mb-4">{entry.abbreviation}</h1>
 <p class="mb-2"><strong>Meaning:</strong> {entry.meaning}</p>

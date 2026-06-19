@@ -37,6 +37,7 @@
 		"schema-dts": "^2.0.0",
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.6.0",
+		"svelte-seo": "^2.0.0",
 		"tailwindcss": "^4.3.0",
 		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.60.1",
